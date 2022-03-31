@@ -1,0 +1,523 @@
+* {
+  -webkit-touch-callout: none;
+  /*系统默认菜单被禁用*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  -moz-user-select: none;
+  /*火狐*/
+  -ms-user-select: none;
+  /*IE10*/
+  user-select: none;
+}
+.invisible {
+  opacity: 0!important;
+}
+input {
+  -webkit-user-select: auto;
+  /*webkit浏览器*/
+  color: transparent;
+  z-index: -1;
+  text-indent: -999em;
+  margin-left: -100%;
+  width: 200%;
+  opacity: 0;
+}
+#realIMG {
+  -webkit-touch-callout: default;
+}
+.unableIMG > img {
+  pointer-events: none!important;
+}
+.show {
+  display: block!important;
+}
+.unableClick,
+.unableClick * {
+  pointer-events: none!important;
+}
+.container {
+  pointer-events: none;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container * {
+  pointer-events: auto;
+}
+.container img {
+  width: 100%;
+}
+.container > div {
+  display: none;
+}
+.container > div .uiContainer {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  color: #0d88b2;
+}
+.container > div#loadingContainer {
+  transition: all 1s;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url("../img/bg.jpg") #040404 center;
+  background-size: cover;
+}
+.container > div#loadingContainer > .loadingMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.container > div#loadingContainer > .uiContainer {
+  width: 24%;
+  font-size: .1rem;
+}
+.container > div#loadedContainer > .uiContainer {
+  width: 100%;
+}
+.container > div#loadedContainer > .uiContainer > .loadedTip {
+  margin-bottom: 45%;
+  width: 40%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container > div#loadedContainer > .uiContainer > .loadedTip > #loadedTIP {
+  display: none;
+}
+.container > div#loadedContainer > .uiContainer #pressButton {
+  left: 50%;
+  position: relative;
+  width: 100%;
+  transform: translate(-50%);
+}
+.container > div#inputContainer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.container > div#inputContainer > .inputDiv {
+  transition: top .5s;
+  width: 60%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%);
+}
+.container > div#inputContainer > .inputDiv > label {
+  position: absolute;
+  width: 100%;
+  height: 57%;
+  color: #168a95;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.container > div#inputContainer > .uiContainer {
+  width: 24%;
+  font-size: .1rem;
+  bottom: 15%;
+}
+.container > div#flyContainer > .uiContainer {
+  width: 90%;
+}
+.container > div#flyContainer > .uiContainer > #flyTipSpan {
+  white-space: nowrap;
+  text-align: center;
+  font-size: .8rem;
+  margin-bottom: 13%;
+}
+.container > div#flyContainer > .uiContainer > * {
+  color: #168aa1;
+  margin: 0 0 0 50%;
+  transform: translate(-50%);
+  float: left;
+}
+.container > div#flyContainer > .uiContainer > *.flyTimeDIV {
+  display: none;
+}
+.container > div#flyContainer > .uiContainer > *#timeContainer,
+.container > div#flyContainer > .uiContainer > *.flyTip {
+  width: 25%;
+}
+.container > div#flyContainer > .uiContainer > *#timeContainer > div {
+  display: inline-block;
+  position: relative;
+  width: 14%;
+  margin-right: 3%;
+}
+.container > div#flyContainer > .uiContainer > *#timeContainer > div > img {
+  display: block;
+}
+.container > div#flyContainer > .uiContainer > *.flyIcon {
+  width: 25%;
+}
+.container > div#flyContainer > .uiContainer > *.flyIcon > img {
+  display: block;
+}
+.container > div#starContainer > #starImgContainer {
+  display: none;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.container > div#starContainer > #starImgContainer,
+.container > div#starContainer > #starImgContainer * {
+  pointer-events: none;
+}
+.container > div#starContainer > #starImgContainer > #getCanvasIMG {
+  display: block;
+}
+.container > div#starContainer > #starImgContainer > .upUIs {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.container > div#starContainer > #starImgContainer > .upUIs > #starUpUILogo {
+  width: 84%;
+  margin: 5% 8% 0;
+}
+.container > div#starContainer > #starImgContainer > .upUIs > #starContentUI {
+  position: absolute;
+  bottom: 22%;
+  width: 60%;
+  left: 50%;
+  transform: translate(-50%);
+  color: #ffffff;
+  text-align: center;
+}
+.container > div#starContainer > #starImgContainer > .upUIs > #starContentUI > .shareNameSpan {
+  display: inline-block;
+  margin-bottom: 2%;
+}
+.container > div#starContainer > #starImgContainer > #starTip {
+  position: absolute;
+  bottom: 17%;
+  width: 12%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.container > div#starContainer > .uiContainer {
+  width: 90%;
+}
+.container > div#starContainer > .uiContainer > div {
+  margin: 0;
+  display: inline-block;
+  background-size: cover;
+}
+.container > div#starContainer > .uiContainer > div img {
+  display: block;
+}
+.container > div#starContainer > .uiContainer > div.centerButton {
+  width: 25%;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%) scale(1.1);
+}
+.container > div#starContainer > .uiContainer > div.centerButton #mainButtonIMG {
+  transform: scale(0.85);
+}
+.container > div#starContainer > .uiContainer > div.centerButton > #IconCenterCO {
+  position: absolute;
+  top: 0;
+  animation: scaledown 2s infinite .7s;
+}
+.container > div#starContainer > .uiContainer > div.centerButton > #IconCenterCI {
+  position: absolute;
+  top: 0;
+  animation: scaleup 2s infinite ;
+}
+.container > div#starContainer > .uiContainer > div#screenShot {
+  width: 25%;
+  float: right;
+  margin-right: 5%;
+  transform: translate(0, -10%) scale(1.2);
+}
+.container > div#starContainer > .uiContainer > div#refreshALL {
+  width: 25%;
+  float: left;
+  margin-left: 10%;
+  transform: translate(0, -10%) scale(1.2);
+}
+.container > div#shareContainer > .imgNclose > #shareImgContainer {
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.container > div#shareContainer > .imgNclose > #shareImgContainer > #getCanvasIMG {
+  display: block;
+}
+.container > div#shareContainer > .imgNclose > #shareImgContainer > .upUIs {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.container > div#shareContainer > .imgNclose > #shareImgContainer > .upUIs > .shareNameSpan {
+  color: white;
+  position: absolute;
+  top: 4%;
+  width: 100%;
+  left: 6.7%;
+  font-size: 1.1rem;
+  text-align: left;
+}
+.container > div#shareContainer > .uiContainer {
+  width: 25%;
+  bottom: 2%;
+}
+.container > div#shareContainer > #realIMGContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+.container > div#shareContainer > #realIMGContainer > #realIMG {
+  pointer-events: auto;
+  display: none;
+  border: 1px rgba(34, 58, 62, 0.7) solid;
+  margin-top: 2%;
+  position: relative;
+  width: 80%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  animation: realIMGdown 1s;
+}
+.container > div#shareContainer > #realIMGContainer > #shareClose {
+  display: none;
+  position: relative;
+  width: 7%;
+  float: right;
+  right: 6%;
+  margin-top: -4%;
+}
+.container > div#hireContainer {
+  color: #bce6ec;
+}
+.container > div#hireContainer > .hireContent {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.container > div#hireContainer > .hireContent > img#hireGetIMG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  box-sizing: border-box;
+  border: 1px rgba(34, 58, 62, 0.7) solid;
+}
+.container > div#hireContainer > .hireContent > img#hireQR {
+  opacity: 0;
+  bottom: 5%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+}
+.container > div#hireContainer > .hireContent > img:nth-child(2) {
+  position: relative;
+  margin-top: 25%;
+  transform: scale(1.2);
+}
+.container > div#hireContainer > .hireContent > img:last-child {
+  position: absolute;
+  bottom: 0;
+}
+.container > div#hireContainer > .hireContent > p {
+  width: 100%;
+  margin-top: 11%;
+  font-size: .8rem;
+  text-align: center;
+  position: relative;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+.container > div#hireContainer > .uiContainer {
+  width: 100%;
+}
+.container > div#hireContainer > .uiContainer > div {
+  width: 25%;
+  display: inline-block;
+  margin: 0 10%;
+}
+#horizontal-wrapper {
+  z-index: 99999;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000000;
+}
+#horizontal-wrapper > p {
+  width: 35%;
+  color: white;
+  font-size: 1rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+#horizontal-wrapper > p > img {
+  width: 100%;
+}
+#share-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  z-index: 9999;
+}
+#share-wrapper img {
+  width: 100%;
+}
+#share-wrapper > img {
+  display: block;
+  border: 1px rgba(34, 58, 62, 0.7) solid;
+  top: 2%;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%);
+}
+#share-wrapper > #hireIMGClose {
+  z-index: 1;
+  position: absolute;
+  bottom: 13%;
+  width: 7%;
+  right: 3%;
+  transform: translate(-50%, -50%);
+}
+#share-wrapper > .uiContainer {
+  width: 20%;
+  bottom: 8%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+@keyframes rotate1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rotate2 {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+@keyframes translate2 {
+  0% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(30%);
+    opacity: 1;
+  }
+}
+@keyframes translate1 {
+  0% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  60% {
+    transform: translate(30%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(30%);
+    opacity: 1;
+  }
+}
+@keyframes rotateStar {
+  from {
+    transform: rotate3d(0.5, 0, 0, 50deg) rotate(0deg);
+  }
+  to {
+    transform: rotate3d(0.5, 0, 0, 50deg) rotate(-359deg);
+  }
+}
+#rotateGla {
+  margin-left: 26%;
+  width: 48%;
+  position: absolute;
+  top: 38%;
+  animation: rotateStar 72s infinite linear;
+}
+@keyframes realIMGdown {
+  from {
+    top: -80%;
+  }
+  to {
+    top: 2%;
+  }
+}
+@keyframes scaledown {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes scaleup {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+/*# sourceMappingURL=index.css.map */

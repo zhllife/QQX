@@ -1,0 +1,520 @@
+* {
+  -webkit-touch-callout: none;
+  /*系统默认菜单被禁用*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  -moz-user-select: none;
+  /*火狐*/
+  -ms-user-select: none;
+  /*IE10*/
+  user-select: none;
+}
+.invisible{
+  opacity: 0!important;
+}
+input {
+  -webkit-user-select: auto;
+  /*webkit浏览器*/
+  color: transparent;
+  z-index: -1;
+  text-indent: -999em; // 隐藏input文字
+  margin-left: -100%;// 隐藏input光标
+  width: 200%; // 保留inputDOM在页面可视区域内
+  //-webkit-transform:scale(0);
+  opacity: 0;
+}
+#realIMG{
+  -webkit-touch-callout: default;
+}
+
+
+.unableIMG{
+  >img{
+    pointer-events: none!important;
+  }
+}
+.show{
+  display: block!important;
+}
+.unableClick{
+  &,& *{
+    pointer-events: none!important;
+  }
+}
+.container{
+  pointer-events: none;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  *{
+    pointer-events: auto;
+  }
+  img{
+    width: 100%;
+  }
+  >div{
+    display: none;
+    .uiContainer{
+      position: absolute;
+      bottom: 6%;
+      left: 50%;
+      transform: translate(-50%);
+      text-align: center;
+      color: #0d88b2;
+    }
+    &#loadingContainer{
+      transition: all 1s;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: url("../img/bg.jpg") #040404 center;
+      background-size: cover;
+      >.loadingMask{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.5);
+      }
+      >.uiContainer{
+        width: 24%;
+        font-size: .1rem;
+      }
+    }
+    &#loadedContainer{
+      >.uiContainer{
+        width: 100%;
+        >.loadedTip{
+          margin-bottom: 45%;
+          width: 40%;
+          margin-left: 50%;
+          transform: translate(-50%,-50%);
+          >#loadedTIP{
+            display: none;
+          }
+        }
+        #pressButton{
+          left: 50%;
+          position: relative;
+          width: 100%;
+          transform: translate(-50%);
+        }
+      }
+    }
+    &#inputContainer{
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: white;
+      >.inputDiv{
+        transition: top .5s;
+        width: 60%;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%);
+        >label{
+          position: absolute;
+          width: 100%;
+          height: 57%;
+          color: #168a95;
+          top: 50%;
+          left: 0;
+          transform: translate(0,-50%);
+        }
+      }
+      >.uiContainer{
+        width: 24%;
+        font-size: .1rem;
+        bottom: 15%;
+      }
+    }
+    &#flyContainer{
+      >.uiContainer{
+        width: 90%;
+        >#flyTipSpan{
+          white-space: nowrap;
+          text-align: center;
+          font-size: .8rem;
+          margin-bottom: 13%;
+        }
+        >*{
+          color: #168aa1;
+          margin: 0 0 0 50%;
+          transform: translate(-50%);
+          float: left;
+          &.flyTimeDIV{
+            display: none;
+          }
+          &#timeContainer,&.flyTip{
+            width: 25%;
+          }
+          &#timeContainer{
+            >div{
+              display: inline-block;
+              position: relative;
+              width: 14%;
+              margin-right: 3%;
+              >img{
+                display: block;
+              }
+            }
+          }
+
+          &.flyIcon{
+            width: 25%;
+            //margin: 0;
+            //float: right;
+            //bottom: 0;
+            //right: 10%;
+            //position: absolute;
+            //transform: unset;
+            //transform: translate(0,-50%);
+            >img{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    &#starContainer{
+      >#starImgContainer{
+        &,& *{
+          pointer-events: none;
+        }
+        display: none;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        >#getCanvasIMG{
+          display: block;
+        }
+        >.upUIs{
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          >#starUpUILogo{
+            width: 84%;
+            margin: 5% 8% 0;
+          }
+          >#starContentUI{
+            position: absolute;
+            bottom: 22%;
+            width: 60%;
+            left: 50%;
+            transform: translate(-50%);
+            color: #ffffff;
+            text-align: center;
+            >.shareNameSpan{
+              display: inline-block;
+              margin-bottom: 2%;
+            }
+          }
+        }
+        >#starTip{
+          position: absolute;
+          bottom: 17%;
+          width: 12%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+      }
+      >.uiContainer{
+        //pointer-events: none;
+        width: 90%;
+        >div{
+          img{
+            display: block;
+          }
+          &.centerButton{
+            width: 25%;
+            bottom: 0;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%) scale(1.1);
+            #mainButtonIMG{
+              transform: scale(.85);
+            }
+            >#IconCenterCO{
+              position: absolute;
+              top: 0;
+              animation: scaledown 2s infinite .7s;
+            }
+            >#IconCenterCI{
+              position: absolute;
+              top: 0;
+              animation: scaleup 2s infinite ;
+            }
+          }
+          &#screenShot{
+            width: 25%;
+            float: right;
+            margin-right: 5%;
+            transform: translate(0,-10%) scale(1.2);
+          }
+          &#refreshALL{
+            width: 25%;
+            float: left;
+            margin-left: 10%;
+            transform: translate(0, -10%) scale(1.2);
+
+          }
+          margin: 0;
+          display: inline-block;
+          background-size: cover;
+
+        }
+      }
+    }
+    &#shareContainer{
+      >.imgNclose{
+        >#shareImgContainer{
+          opacity: 0;
+          top: 0;
+          position: absolute;
+          width: 100%;
+          left: 50%;
+          transform: translate(-50%);
+          >#getCanvasIMG{
+            display: block;
+          }
+          >.upUIs{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            >.shareNameSpan{
+              color: white;
+              position: absolute;
+              top: 4%;
+              width: 100%;
+              left: 6.7%;
+              font-size: 1.1rem;
+              text-align: left;
+            }
+          }
+        }
+      }
+      >.uiContainer{
+        width: 25%;
+        bottom: 2%;
+      }
+      >#realIMGContainer{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.7);
+        pointer-events: none;
+        >#realIMG{
+          pointer-events: auto;
+          display: none;
+          border: 1px rgba(34, 58, 62, 0.7) solid;
+          margin-top: 2%;
+          position: relative;
+          width: 80%;
+          margin-left: 50%;
+          transform: translate(-50%);
+          animation: realIMGdown 1s;
+        }
+        >#shareClose{
+          display: none;
+          position: relative;
+          width: 7%;
+          float: right;
+          right: 6%;
+          margin-top: -4%;
+        }
+      }
+
+    }
+    &#hireContainer{
+      color: #bce6ec;
+      >.hireContent{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        >img#hireGetIMG{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          opacity: 0;
+          box-sizing: border-box;
+          border: 1px rgba(34, 58, 62, 0.7) solid;
+        }
+        >img#hireQR{
+          opacity: 0;
+          bottom: 5%;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          width: 90%;
+        }
+        >img:nth-child(2){
+          position: relative;
+          margin-top: 25%;
+          transform: scale(1.2);
+        }
+        >img:last-child{
+          position: absolute;
+          bottom: 0;
+        }
+        //>#hireUIFaceContainer{
+        //  position: relative;
+        //  margin-top: 11%;
+        //  width: 15%;
+        //  margin-left: 50%;
+        //  transform: translate(-50%);
+        //  >#hireUserFaceContainer{
+        //    position: absolute;
+        //    overflow: hidden;
+        //    border-radius: 50%;
+        //    width: 72%;
+        //    top: 50%;
+        //    left: 50%;
+        //    transform: translate(-50%, -50%);
+        //  }
+        //}
+        >p{
+          width: 100%;
+          margin-top: 11%;
+          font-size: .8rem;
+          text-align: center;
+          position: relative;
+          margin-left: 50%;
+          //margin-top: 10%;
+          transform: translate(-50%);
+        }
+      }
+      >.uiContainer{
+        width: 100%;
+        >div{
+          width: 25%;
+          display: inline-block;
+          margin: 0 10%;
+        }
+      }
+    }
+  }
+}
+#horizontal-wrapper{
+  z-index: 99999;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000000;
+  >p{
+    width: 35%;
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    >img{
+      width: 100%;
+    }
+  }
+}
+#share-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0,0,0,.9);
+  display: none;
+  z-index: 9999;
+  img{
+    width: 100%;
+  }
+  >img{
+    display: block;
+    border: 1px rgba(34, 58, 62, 0.7) solid;
+    top: 2%;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    //animation: realIMGdown 1s;
+  }
+  >#hireIMGClose{
+    z-index: 1;
+    position: absolute;
+    bottom: 13%;
+    width: 7%;
+    right: 3%;
+    transform: translate(-50%, -50%);
+  }
+  >.uiContainer{
+    width: 20%;
+    bottom: 8%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+@keyframes rotate1 {
+  from {transform: rotate(0)}
+  to {transform: rotate(359deg)}
+}
+@keyframes rotate2 {
+  from {transform: rotate(359deg)}
+  to {transform: rotate(0)}
+}
+
+@keyframes translate2 {
+  0% {transform: translate(0);   opacity: 0}
+  30%{transform: translate(0);   opacity: 0}
+  50%{transform: translate(30%); opacity: 1}
+  100%{transform: translate(30%);opacity: 1}
+}
+@keyframes translate1 {
+  0% {transform: translate(0);   opacity: 0}
+  40%{transform: translate(0);   opacity: 0}
+  60%{transform: translate(30%); opacity: 1}
+  100%{transform: translate(30%);opacity: 1}
+}
+
+@keyframes rotateStar {
+  from{transform: rotate3d(0.5,0,0,50deg) rotate(0deg);}
+  to  {transform: rotate3d(0.5,0,0,50deg) rotate(-359deg);}
+}
+
+#rotateGla{
+  margin-left: 26%;
+  width: 48%;
+  position: absolute;
+  top: 38%;
+  animation: rotateStar 72s infinite linear;
+}
+@keyframes realIMGdown {
+  from{top: -80%;}
+  to  {top: 2%;}
+}
+@keyframes scaledown {
+  0%{transform: scale(1.2)}
+  50%{transform: scale(1)}
+  100%{transform: scale(1.2)}
+}
+@keyframes scaleup {
+  0%{transform: scale(0.8)}
+  50%{transform: scale(1)}
+  100%{transform: scale(0.8)}
+}
